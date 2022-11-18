@@ -1,12 +1,15 @@
-import { NgModule } from '@angular/core';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
+  declarations: [AppComponent, SidebarComponent, NavbarComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

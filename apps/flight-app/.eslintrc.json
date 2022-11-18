@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "angularEssentials",
+            "prefix": "flight",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "angular-essentials",
+            "prefix": "flight",
             "style": "kebab-case"
           }
         ]
