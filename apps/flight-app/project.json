@@ -84,7 +84,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/flight-app"],
+      "outputs": ["{workspaceRoot}/coverage/apps/flight-app"],
       "options": {
         "jestConfig": "apps/flight-app/jest.config.ts",
         "passWithNoTests": true
