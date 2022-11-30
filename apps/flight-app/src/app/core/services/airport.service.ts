@@ -11,7 +11,8 @@ export class AirportService {
   ) {}
 
   getCity(name: string, cityFormat: CityFormat): Observable<string> {
-    const cachedCity$ = this.cityCacheService.getCity(name, cityFormat);
+    const cachedCity$: Observable<string> | undefined =
+      this.cityCacheService.getCity(name, cityFormat);
 
     if (cachedCity$) {
       return cachedCity$;
