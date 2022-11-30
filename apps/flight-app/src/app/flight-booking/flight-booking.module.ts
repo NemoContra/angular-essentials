@@ -4,6 +4,7 @@ import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { FlightCardComponent } from './flight-card/flight-card.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlightDetailsDirective } from './flight-details.directive';
+import { FlightEditComponent } from './flight-edit/flight-edit.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule],
@@ -11,6 +12,7 @@ import { FlightDetailsDirective } from './flight-details.directive';
     FlightSearchComponent,
     FlightCardComponent,
     FlightDetailsDirective,
+    FlightEditComponent,
   ],
   exports: [FlightSearchComponent],
 })
