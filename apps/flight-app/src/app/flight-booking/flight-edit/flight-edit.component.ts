@@ -1,14 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  FormControl,
-  FormGroup,
-  ValidationErrors,
-  ValidatorFn,
-  Validators,
-} from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Flight } from '../../app.component';
-import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 // type EditableFlight = Pick<Flight, 'id' | 'from' | 'to' | 'date'>;
 type EditableFlight = Omit<Flight, 'delayed'>;
