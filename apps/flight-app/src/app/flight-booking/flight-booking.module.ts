@@ -5,9 +5,10 @@ import { FlightCardComponent } from './flight-card/flight-card.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlightDetailsDirective } from './flight-details.directive';
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
+import { FlightBookingRoutingModule } from './flight-booking-routing.module';
 
 @NgModule({
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, FlightBookingRoutingModule, SharedModule],
   declarations: [
     FlightSearchComponent,
     FlightCardComponent,

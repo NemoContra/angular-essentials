@@ -1,4 +1,4 @@
-<form [formGroup]="editForm">
+<form [formGroup]="editForm" (submit)="save()">
   <div class="form-group">
     <label>Id:</label>
     <input formControlName="id" class="form-control" />
@@ -12,6 +12,12 @@
   <div class="form-group">
     <label>From:</label>
     <input formControlName="from" class="form-control" />
+    <div
+      class="alert alert-danger"
+      *ngIf="editForm?.controls?.['from']?.errors as errors"
+    >
+      {{ errors | json }}
+    </div>
   </div>
 
   <div class="form-group">
@@ -19,7 +25,9 @@
     <input formControlName="to" class="form-control" />
   </div>
 
+  <div>{{ editForm.errors | json }}</div>
+
   <div class="form-group">
-    <button (click)="save()" class="btn btn-default">Save</button>
+    <button type="submit" class="btn btn-default">Save</button>
   </div>
 </form>

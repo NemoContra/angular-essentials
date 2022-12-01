@@ -16,7 +16,6 @@ export interface Flight {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Hello World!';
   flights$: Observable<Flight[] | null> = this.flightService.getFlights();
 
   constructor(private flightService: FlightService) {}
