@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { FlightBookingModule } from './flight-booking/flight-booking.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [BrowserModule, CoreModule, FlightBookingModule],
+  imports: [BrowserModule, AppRoutingModule, CoreModule],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })

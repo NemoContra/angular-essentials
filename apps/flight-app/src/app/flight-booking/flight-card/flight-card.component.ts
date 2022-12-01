@@ -10,6 +10,8 @@ export class FlightCardComponent {
   @Input() selected = false;
   @Output() selectedChange = new EventEmitter<boolean>();
 
+  editMode = false;
+
   select() {
     this.selected = true;
     this.selectedChange.emit(this.selected);

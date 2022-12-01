@@ -9,37 +9,25 @@
   </div>
   <ul class="nav">
     <li>
-      <a>
-        <i class="ti-home"></i>
-        <p>Home</p>
-      </a>
-    </li>
-
-    <li>
-      <a>
+      <a routerLink="/flight-booking">
         <i class="ti-arrow-top-right"></i>
         <p>Flights</p>
       </a>
     </li>
 
-    <li>
-      <a routerLink="/flight-booking/passenger-search">
-        <i class="ti-user"></i>
-        <p>Passengers</p>
+    <li *ngIf="isAuthenticated$ | async; else login">
+      <a routerLink="/logout">
+        <i class="ti-power-off"></i>
+        <p>Logout</p>
       </a>
     </li>
-
-    <li routerLinkActive="active">
-      <a>
-        <i class="ti-shopping-cart"></i>
-        <p>Basket</p>
-      </a>
-    </li>
-    <li routerLinkActive="active">
-      <a>
-        <i class="ti-close"></i>
-        <p>Hide Basket</p>
-      </a>
-    </li>
+    <ng-template #login>
+      <li>
+        <a routerLink="/login">
+          <i class="ti-unlock"></i>
+          <p>Login</p>
+        </a>
+      </li>
+    </ng-template>
   </ul>
 </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Flight } from '../../app.component';
 import { Observable } from 'rxjs';
 import { FlightService } from '../../core/services/flight.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'flight-search',
@@ -17,8 +18,10 @@ export class FlightSearchComponent {
 
   constructor(private flightService: FlightService) {}
 
-  search(): void {
-    this.flights$ = this.flightService.findFlights(this.from, this.to);
+  search(form: NgForm): void {
+    if (form.valid) {
+      this.flights$ = this.flightService.findFlights(this.from, this.to);
+    }
   }
 
   select(flight: Flight): void {
