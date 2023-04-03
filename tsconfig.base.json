@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@angular-essentials/shared/util/city": [
+        "libs/shared/util/city/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

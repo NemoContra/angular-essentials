@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Flight } from '../entities/flights';
 import { FlightService } from '../services/flight.service';
-import { catchError, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'flight-search',
@@ -11,19 +10,24 @@ import { catchError, Observable, of } from 'rxjs';
 export class FlightSearchComponent {
   from = '';
   to = '';
-  flights$?: Observable<Flight[]>;
+  flights: Flight[] = [];
 
   selectedFlight?: Flight;
 
   private flightService = inject(FlightService);
 
+  constructor() {
+    console.log('CONSTRUCT');
+  }
+
   search(): void {
-    this.flights$ = this.flightService.find(this.from, this.to).pipe(
-      catchError((err) => {
-        console.error(err);
-        return of([]);
-      })
-    );
+    this.flightService.find(this.from, this.to).subscribe({
+      next: (flights) => {
+        this.flights = flights;
+        console.log('RESOLVED FLIGHTS');
+      },
+      error: (err) => console.error(err),
+    });
   }
 
   select(f: Flight): void {

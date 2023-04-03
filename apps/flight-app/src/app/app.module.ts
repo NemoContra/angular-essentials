@@ -7,9 +7,10 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
+import { CityPipe } from '@angular-essentials/shared/util/city';
 
 @NgModule({
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule, CityPipe],
   declarations: [
     AppComponent,
     SidebarComponent,

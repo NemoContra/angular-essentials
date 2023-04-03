@@ -9,7 +9,16 @@
     <div class="content">
       <h1>{{ title }}</h1>
 
-      <div class="container-fluid">
+      <button
+        class="btn btn-default"
+        (click)="showFlightSearch = !showFlightSearch"
+      >
+        Show/hide Flight Search
+      </button>
+
+      <button (click)="callCD()">Call CD</button>
+
+      <div class="container-fluid" *ngIf="showFlightSearch">
         <flight-search></flight-search>
       </div>
     </div>
