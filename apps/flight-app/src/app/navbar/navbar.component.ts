@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'flight-navbar',
   templateUrl: 'navbar.component.html',
+  standalone: true,
 })
 export class NavbarComponent {
   private sidebarVisible = false;

@@ -1,11 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { Flight } from '../entities/flights';
 import { FlightService } from '../services/flight.service';
+import { CityPipe } from '@angular-essentials/shared/util/city';
+import { FormsModule } from '@angular/forms';
+import { DatePipe, JsonPipe, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'flight-search',
   templateUrl: './flight-search.component.html',
   styleUrls: ['./flight-search.component.scss'],
+  standalone: true,
+  imports: [CityPipe, FormsModule, NgIf, NgForOf, JsonPipe, DatePipe],
 })
 export class FlightSearchComponent {
   from = '';
