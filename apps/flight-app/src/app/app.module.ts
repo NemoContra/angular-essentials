@@ -6,10 +6,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FlightSearchModule } from './flight-search/flight-search.module';
-import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  imports: [BrowserModule, HttpClientModule, SharedModule, FlightSearchModule],
+  imports: [BrowserModule, HttpClientModule, FlightSearchModule],
   declarations: [AppComponent, SidebarComponent, NavbarComponent],
   bootstrap: [AppComponent],
 })
