@@ -13,12 +13,7 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@angular-essentials/shared/util/city": [
-        "libs/shared/util/city/src/index.ts"
-      ]
-    }
+    "baseUrl": "."
   },
   "exclude": ["node_modules", "tmp"]
 }
