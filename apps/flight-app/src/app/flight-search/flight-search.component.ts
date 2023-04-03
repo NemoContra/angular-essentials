@@ -1,6 +1,7 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Flight } from '../entities/flights';
+import { FlightService } from '../services/flight.service';
+import { catchError, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'flight-search',
@@ -10,26 +11,19 @@ import { Flight } from '../entities/flights';
 export class FlightSearchComponent {
   from = '';
   to = '';
-  flights: Flight[] = [];
+  flights$?: Observable<Flight[]>;
+
   selectedFlight?: Flight;
 
-  private httpClient = inject(HttpClient);
+  private flightService = inject(FlightService);
 
   search(): void {
-    const url = 'http://www.angular.at/api/flight';
-
-    const params = new HttpParams({
-      fromObject: { from: this.from, to: this.to },
-    });
-
-    this.httpClient.get<Flight[]>(url, { params }).subscribe({
-      next: (flights: Flight[]) => {
-        this.flights = flights;
-      },
-      error: (errResp) => {
-        console.error('Error loading flights', errResp);
-      },
-    });
+    this.flights$ = this.flightService.find(this.from, this.to).pipe(
+      catchError((err) => {
+        console.error(err);
+        return of([]);
+      })
+    );
   }
 
   select(f: Flight): void {

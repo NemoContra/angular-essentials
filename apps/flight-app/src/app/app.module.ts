@@ -14,9 +14,8 @@ import { FlightSearchComponent } from './flight-search/flight-search.component';
     AppComponent,
     SidebarComponent,
     NavbarComponent,
-    FlightSearchComponent
+    FlightSearchComponent,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
