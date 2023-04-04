@@ -1,4 +1,4 @@
-import { inject, Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { flightsFeature, FlightsState } from './flights.feature';
 import { Store } from '@ngrx/store';
