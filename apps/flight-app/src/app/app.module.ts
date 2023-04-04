@@ -5,10 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FlightSearchModule } from './flight-search/flight-search.module';
+import { FlightBookingModule } from './flight-booking/flight-booking.module';
 
 @NgModule({
-  imports: [BrowserModule, HttpClientModule, FlightSearchModule],
+  imports: [BrowserModule, HttpClientModule, FlightBookingModule],
   declarations: [AppComponent, SidebarComponent, NavbarComponent],
   bootstrap: [AppComponent],
 })

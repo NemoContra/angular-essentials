@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { Flight } from '../entities/flights';
-import { FlightService } from '../services/flight.service';
+import { Flight } from '../../entities/flights';
+import { FlightService } from '../../services/flight.service';
 
 @Component({
   selector: 'flight-search',
@@ -14,17 +14,17 @@ export class FlightSearchComponent {
 
   selectedFlight?: Flight;
 
-  private flightService = inject(FlightService);
+  basket: Record<number, boolean> = {
+    3: true,
+    5: true,
+  };
 
-  constructor() {
-    console.log('CONSTRUCT');
-  }
+  private flightService = inject(FlightService);
 
   search(): void {
     this.flightService.find(this.from, this.to).subscribe({
       next: (flights) => {
         this.flights = flights;
-        console.log('RESOLVED FLIGHTS');
       },
       error: (err) => console.error(err),
     });

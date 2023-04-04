@@ -5,7 +5,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { Flight } from '../entities/flights';
+import { Flight } from '../../entities/flights';
 
 @Directive({
   selector: '[flightDetail]',
