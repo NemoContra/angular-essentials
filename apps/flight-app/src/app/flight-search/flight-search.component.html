@@ -36,6 +36,7 @@
           <tr
             *ngFor="let f of flights"
             [class.table-active]="f === selectedFlight"
+            [flightDetail]="f"
           >
             <td>{{ f.id }}</td>
             <td>{{ f.from | city : 'short' }}</td>
