@@ -14,6 +14,11 @@ export class FlightSearchComponent {
 
   selectedFlight?: Flight;
 
+  basket: Record<number, boolean> = {
+    3: true,
+    5: true,
+  };
+
   private flightService = inject(FlightService);
 
   constructor() {
@@ -32,5 +37,9 @@ export class FlightSearchComponent {
 
   select(f: Flight): void {
     this.selectedFlight = f;
+  }
+
+  setBasket(id: number, event: any) {
+    this.basket[id] = event;
   }
 }
