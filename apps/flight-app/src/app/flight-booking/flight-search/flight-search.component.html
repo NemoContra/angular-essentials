@@ -1,10 +1,10 @@
-<div class="card">
+<div class="card" *ngrxLet="flightsViewModel$ as vm">
   <div class="header">
     <h2 class="title">Flight Search</h2>
   </div>
 
   <div class="content">
-    <form [formGroup]="formGroup">
+    <form [formGroup]="formGroup" (submit)="searchFlights()">
       <div class="form-group">
         <label>From:</label>
         <input formControlName="from" class="form-control" />
@@ -13,11 +13,16 @@
         <label>To:</label>
         <input formControlName="to" class="form-control" />
       </div>
+
+      <button class="btn btn-default" type="submit">Search flights</button>
     </form>
 
-    <ng-container *ngIf="flights$ | async as flights">
+    <div *ngIf="vm.flightsLoading">LOADING...</div>
+    <div *ngIf="vm.flightsErrorCode">ERROR</div>
+
+    <ng-container *ngIf="vm.flights">
       <div class="row">
-        <div *ngFor="let f of flights" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div *ngFor="let f of vm.flights" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <flight-card [item]="f" [(selected)]="basket[f.id]" />
         </div>
       </div>
