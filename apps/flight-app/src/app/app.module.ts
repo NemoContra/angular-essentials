@@ -6,9 +6,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FlightBookingModule } from './flight-booking/flight-booking.module';
+import { LetModule } from '@ngrx/component';
 
 @NgModule({
-  imports: [BrowserModule, HttpClientModule, FlightBookingModule],
+  imports: [BrowserModule, HttpClientModule, FlightBookingModule, LetModule],
   declarations: [AppComponent, SidebarComponent, NavbarComponent],
   bootstrap: [AppComponent],
 })
